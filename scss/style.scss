@@ -1,26 +1,24 @@
 // sass에서 사용하는 for 문의 구조는 다음과 같음
-// 아래와 같이 for 문을 쓰게 되면, 변수 $i에 1번부터 5번까지 숫자를 계속 담아주면서
+// 아래와 같이 for 문을 쓰게 되면, 변수 $i에 1번부터 5번 '미만까지' 숫자를 계속 담아주면서
 //  block안의 내용을 계속 반복한다는 뜻.
+// 이 때, 중요한 점은 $i에 마지막 숫자인 4까지 넣고 싶다면 그것보다 1이 큰 5를 to에 넣어줘야 됨.
+// 해당 숫자 '미만까지' $i에 넣어서 반복문을 수행해 준다는 뜻이기 때문!
 /*
-@for $i from 1 to 4 {
+@for $i from 1 to 5 {
   .list li.ico1 {
   }
 }
 */
 
-// 만약 @for 없이 각 리스트에 아이콘을 추가한다면 다음과 같이 해줘야 했음.
-.list li.ico1 {
-  background: url(../icons/ico1.png) no-repeat;
+// 아이콘이 적절한 위치와 사이즈로 배치될 수 있도록 li 태그의 스타일값을 조정해 줌.
+.list li {
+  text-indent: 30px; // 텍스트와 겹치는 것을 방지하기 위해 들여쓰기로 30px 정도 띄워줌.
+  background: no-repeat 0 0 / 20px auto; // 각각의 list 요소들의 배경에 대해서 반복 없고, (0, 0)에 위치시키며, 배경 사이즈는 20px 정도로 지정함
 }
 
-.list li.ico2 {
-  background: url(../icons/ico2.png) no-repeat;
-}
-
-.list li.ico3 {
-  background: url(../icons/ico3.png) no-repeat;
-}
-
-.list li.ico4 {
-  background: url(../icons/ico4.png) no-repeat;
+// 반복적으로 1씩 증가하는 숫자가 들어간 $i를 클래스명, 속성명, 파일명 등 문자열로써 사용할 때는 ${} 문자열 보간을 사용할 것!
+@for $i from 1 to 5 {
+  .list li.ico#{$i} {
+    background-image: url(../icons/ico#{$i}.png);
+  }
 }

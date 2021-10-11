@@ -1,1 +1,1 @@
-.list li.ico1{background:url(../icons/ico1.png) no-repeat}.list li.ico2{background:url(../icons/ico2.png) no-repeat}.list li.ico3{background:url(../icons/ico3.png) no-repeat}.list li.ico4{background:url(../icons/ico4.png) no-repeat}
+.list li{text-indent:30px;background:no-repeat 0 0 / 20px auto}.list li.ico1{background-image:url(../icons/ico1.png)}.list li.ico2{background-image:url(../icons/ico2.png)}.list li.ico3{background-image:url(../icons/ico3.png)}.list li.ico4{background-image:url(../icons/ico4.png)}
