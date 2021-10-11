@@ -21,4 +21,9 @@
   .list li.ico#{$i} {
     background-image: url(../icons/ico#{$i}.png);
   }
+
+  // @for 반복문을 이용해서 각각의 list에 pseudo class 를 추가해 줌.
+  .list li:nth-child(#{$i})::before {
+    content: "제목#{$i}";
+  }
 }
